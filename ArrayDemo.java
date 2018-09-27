@@ -10,19 +10,21 @@ public class ArrayDemo{
     str+="}";
     System.out.println(str);
   }
-  /*public static void printArray(int[][] ary){
+  public static void printArray(int[][] ary){
     String str="{";
     for(int i=0; i<ary.length; i++){
+      str+="{";
       for(int r=0; r<ary.length; r++){
         str+=ary[i][r];
-        if (r<ary[i].length-1){
+        if (r<ary[i].length-2){
           str+=",";
         }
-    str+="}/n{"
       }
+    str+="},\n";
+  }
     str+="}";
     System.out.println(str);
-  }*/
+  }
 
 
 
@@ -33,15 +35,12 @@ public class ArrayDemo{
     700, 800, 900, 1000};
     printArray(nums);
 
-    /*int[][] nums2 = {
+    int[][] nums2 = {
   		{1,0,0,0},
   		{1,0,0,0},
   		{1,0,0,0},
   		};
     printArray(nums2);
     }
-    ]*/
 
-
-  }
 }

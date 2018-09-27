@@ -14,9 +14,9 @@ public class ArrayDemo{
     String str="{";
     for(int i=0; i<ary.length; i++){
       str+="{";
-      for(int r=0; r<ary.length; r++){
+      for(int r=0; r<ary[i].length; r++){
         str+=ary[i][r];
-        if (r<ary[i].length-2){
+        if (r<ary[i].length-1){
           str+=",";
         }
       }
@@ -39,6 +39,32 @@ public class ArrayDemo{
 
 }
 
+  public static void fill2D(int[][] vals){
+    int[][] nums2= new int[vals.length][vals[0].length];
+    for(int i=0; i<vals.length;i++){
+      for(int p=0; p<vals[i].length;p++){
+        if (i==p){
+          nums2[i][p]=3;}
+        else {nums2[i][p]=1;}
+        }
+      }
+    printArray(nums2);
+}
+
+  public static int[][] fill2DCopy(int[][] vals){
+    int[][] nums2= new int[vals.length][vals[0].length];
+    for(int i=0; i<vals.length;i++){
+      for(int p=0; p<vals[i].length;p++){
+        if (vals[i][p]< 0){
+          nums2[i][p]=3;}
+        else {nums2[i][p]=1;}
+        }
+      }
+    return nums2;
+}
+
+
+
 
 
   public static void main(String[] args){
@@ -49,14 +75,16 @@ public class ArrayDemo{
     printArray(nums);
 
     int[][] nums2 = {
-  		{1,0,0,0},
-  		{1,0,0,0},
-  		{1,0,0,0},
+  		{-4,0,-1,0,-5},
+  		{1,-5,0,0,3},
+  		{1,0,0,-7,-4},
   		};
     printArray(nums2);
 
     System.out.println(countZeros2D(nums2));
-    }
+    fill2D(nums2);
+    printArray(fill2DCopy(nums2));
+  }
 
 
 }
